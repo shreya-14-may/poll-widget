@@ -62,6 +62,7 @@ const PollView = ({ poll }) => {
                 className="progress-bar"
                 style={{
                   width: totalVotes > 0 ? `${(option.votes / totalVotes) * 100}%` : '0%',
+                  backgroundColor: '#4caf50',
                 }}
               />
             </div>

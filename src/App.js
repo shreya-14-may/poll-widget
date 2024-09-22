@@ -1,19 +1,19 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import NavBar from './components/NavBar'; // Adjust the import path
-import AddPoll from './components/AddPoll'; // Import AddPoll
-import PollList from './components/PollList'; // Import your Home component (if you have one)
+import Nav from './components/Nav'; 
+import AddPoll from './components/AddPoll'; 
+import PollList from './components/PollList'; 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
 const App = () => {
   return (
       <div className="App">
     <Router>
-      <NavBar />
+      <Nav />
       <Routes>
         <Route path="/add-poll" element={<AddPoll />} />
-        <Route path="/" element={<PollList />} /> {/* Home component for the root path */}
-        {/* Add other routes here */}
+        <Route path="/" element={<PollList />} />
       </Routes>
     </Router>
     </div>

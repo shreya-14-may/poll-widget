@@ -2,10 +2,12 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom'; // Import Link
 
-const NavBar = () => {
+const Nav = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light container-fluid">
-      <Link className="navbar-brand" to="/">Poll App</Link>
+      <Link className="navbar-brand" to="/">
+      <img src={`${process.env.PUBLIC_URL}/votefavicon.png`} alt="Logo" style={{ width: '40px', height: '40px' }} />
+      Poll App</Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -34,4 +36,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default Nav;
