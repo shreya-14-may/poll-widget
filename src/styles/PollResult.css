@@ -1,0 +1,35 @@
+.poll-result {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .poll-options {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .poll-option {
+    margin-bottom: 15px;
+  }
+  
+  .option-text {
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .progress-bar {
+    background-color: #f0f0f0;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 20px;
+    width: 100%;
+  }
+  
+  .progress {
+    background-color: #4caf50; /* Green progress bar */
+    height: 100%;
+    transition: width 0.3s ease;
+  }
+  
