@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+  background-image: url('/Users/deboshreedas/Sites3.0/poll-widget/src/assets/image.png'); 
+  background-size: cover; 
+  background-position: center; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+
+.App-header {
+  background-color: #007bff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .App-header {
+    font-size: calc(8px + 2vmin); 
+  }
+}

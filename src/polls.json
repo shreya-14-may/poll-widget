@@ -1,0 +1,38 @@
+[
+    {
+      "id": "1",
+      "question": "How do you feel today?",
+      "options": [
+        { "text": "Brilliant! I have so much energy", "votes": 0 },
+        { "text": "Always can be worse", "votes": 0 },
+        { "text": "Please, end my misery", "votes": 0 }
+      ]
+    },
+    {
+      "id": "2",
+      "question": "How do you like the Opinary test?",
+      "options": [
+        { "text": "It was great and so challenging", "votes": 0 },
+        { "text": "Not bad, but you can improve", "votes": 0 },
+        { "text": "It was a nightmare, never again", "votes": 0 }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "What's your favorite programming language?",
+      "options": [
+        { "text": "JavaScript", "votes": 0 },
+        { "text": "Python", "votes": 0 },
+        { "text": "Java", "votes": 0 }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "What's your favorite food?",
+      "options": [
+        { "text": "Pizza", "votes": 0 },
+        { "text": "Burger", "votes": 0 }
+      ]
+    }
+  ]
+  
