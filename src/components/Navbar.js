@@ -1,10 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../styles/NavBar.css'; 
+import { Link } from 'react-router-dom'; // Import Link
+
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <a className="navbar-brand" href="/">Poll App</a>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light container-fluid">
+      <Link className="navbar-brand" to="/">Poll App</Link>
       <button
         className="navbar-toggler"
         type="button"
@@ -19,13 +20,13 @@ const NavBar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <a className="nav-link" href="/">Home</a>
+            <Link className="nav-link" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/poll">Poll</a>
+            <Link className="nav-link" to="/poll">Poll</Link>
           </li>
           <li className="nav-item">
-            <a className="nav-link" href="/add-poll">Add Poll</a>
+            <Link className="nav-link" to="/add-poll">Add Poll</Link>
           </li>
         </ul>
       </div>

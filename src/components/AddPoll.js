@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { addPoll } from '../redux/pollSlice';
 import { v4 as uuidv4 } from 'uuid';
 
 const AddPoll = () => {
   const [question, setQuestion] = useState('');
   const [options, setOptions] = useState(['', '']);
-  const dispatch = useDispatch();
 
   const handleAddOption = () => {
     setOptions([...options, '']);
@@ -24,7 +21,12 @@ const AddPoll = () => {
       question,
       options: options.map((text) => ({ text, votes: 0 }))
     };
-    dispatch(addPoll(newPoll));
+
+    // Save to local storage
+    const existingPolls = JSON.parse(localStorage.getItem('polls')) || [];
+    localStorage.setItem('polls', JSON.stringify([...existingPolls, newPoll]));
+
+    // Reset form fields
     setQuestion('');
     setOptions(['', '']);
   };

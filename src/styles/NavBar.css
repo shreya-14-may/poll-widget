@@ -1,11 +1,12 @@
 nav {
-    background-color: #007bff; /* Bootstrap primary color */
+    background-color: #007bff; 
     padding: 10px;
-    width: 100%; /* Ensure it takes full width */
+    width: 100%; 
   }
   
   .navbar {
-    margin: 0; /* Remove any default margin */
+    margin: 0;
+    width: 100%; 
   }
   
   nav ul {
