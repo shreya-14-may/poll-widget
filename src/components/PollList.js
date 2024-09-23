@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PollView from './PollView';
+import pollsData from '../polls.json';
 // import '../styles/Poll.css'; 
 
 const PollList = () => {
@@ -7,9 +8,19 @@ const PollList = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const pollsPerPage = 3;
 
+  // useEffect(() => {
+  //   const storedPolls = JSON.parse(localStorage.getItem('polls')) || [];
+  //   setPolls(storedPolls);
+  // }, []); without polls from  json file
   useEffect(() => {
-    const storedPolls = JSON.parse(localStorage.getItem('polls')) || [];
-    setPolls(storedPolls);
+    const storedPolls = JSON.parse(localStorage.getItem('polls'));
+    if (!storedPolls || storedPolls.length === 0) {
+      // If no polls in localStorage, load from JSON
+      localStorage.setItem('polls', JSON.stringify(pollsData));
+      setPolls(pollsData);
+    } else {
+      setPolls(storedPolls);
+    }
   }, []);
 
   const indexOfLastPoll = currentPage * pollsPerPage;
