@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import PollView from './PollView';
-import '../styles/Poll.css'; // Make sure to import your CSS file
+// import '../styles/Poll.css'; 
 
 const PollList = () => {
   const [polls, setPolls] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const pollsPerPage = 3; // Adjust this to change how many polls per page
+  const pollsPerPage = 3;
 
   useEffect(() => {
     const storedPolls = JSON.parse(localStorage.getItem('polls')) || [];
@@ -42,52 +42,3 @@ const PollList = () => {
 
 export default PollList;
 
-
-// import React, { useEffect, useState } from 'react';
-// import PollView from './PollView';
-// import '../styles/Poll.css';
-
-// const PollList = () => {
-//   const [polls, setPolls] = useState([]);
-//   const [currentPage, setCurrentPage] = useState(1);
-//   const pollsPerPage = 3;
-
-//   useEffect(() => {
-//     const storedPolls = JSON.parse(localStorage.getItem('polls')) || [];
-//     setPolls(storedPolls);
-//   }, []);
-
-//   // Get current polls for the current page
-//   const indexOfLastPoll = currentPage * pollsPerPage;
-//   const indexOfFirstPoll = indexOfLastPoll - pollsPerPage;
-//   const currentPolls = polls.slice(indexOfFirstPoll, indexOfLastPoll);
-
-//   const handleNextPage = () => {
-//     if (indexOfLastPoll < polls.length) {
-//       setCurrentPage((prev) => prev + 1);
-//     }
-//   };
-
-//   const handlePrevPage = () => {
-//     setCurrentPage((prev) => Math.max(prev - 1, 1));
-//   };
-
-//   return (
-//     <div>
-//       <h2>Poll List</h2>
-//       {currentPolls.map((poll) => (
-//         <PollView key={poll.id} poll={poll} />
-//       ))}
-//       <div className="pagination">
-//         <button onClick={handlePrevPage} disabled={currentPage === 1}>
-//           Previous
-//         </button>
-//         <button onClick={handleNextPage} disabled={indexOfLastPoll >= polls.length}>
-//           Next
-//         </button>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default PollList;

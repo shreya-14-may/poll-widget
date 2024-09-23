@@ -19,7 +19,7 @@
     },
     {
       "id": 3,
-      "question": "What's your favorite programming language?",
+      "question": "What is  your favorite programming language?",
       "options": [
         { "text": "JavaScript", "votes": 0 },
         { "text": "Python", "votes": 0 },

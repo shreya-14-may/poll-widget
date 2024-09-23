@@ -1,3 +1,10 @@
+/* .poll-container {
+  margin: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+} */
 
 .poll-container {
   margin: 20px;
@@ -12,7 +19,7 @@
 }
 
 .poll-container:hover {
-  transform: scale(1.05); 
+  transform: scale(1.05); /* Scale down slightly on hover */
 }
 
 .poll-option {
