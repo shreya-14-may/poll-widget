@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 
 const Nav = () => {
+  const isAdmin = process.env.REACT_APP_IS_ADMIN === 'true';
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light container-fluid">
       <Link className="navbar-brand" to="/">
@@ -31,16 +32,20 @@ const Nav = () => {
               Home
             </Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/poll-results">
-              PollResult
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/add-poll">
-              Add Poll
-            </Link>
-          </li>
+          {isAdmin && (
+            <>
+              <li className="nav-item">
+                <Link className="nav-link" to="/poll-results">
+                  Poll Result
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/add-poll">
+                  Add Poll
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>
