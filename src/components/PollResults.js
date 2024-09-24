@@ -3,20 +3,17 @@ import React, { useState } from "react";
 import { Pie } from "react-chartjs-2";
 import { Chart, ArcElement, Title } from "chart.js";
 
-// Register the necessary components
 Chart.register(ArcElement, Title);
 
 const PollResults = () => {
   const polls = JSON.parse(localStorage.getItem("polls")) || [];
 
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 3; // Show 3 questions per page
+  const itemsPerPage = 3;
 
   if (polls.length === 0) {
     return <div>No poll data available.</div>;
   }
-
-  // Get the current polls for the current page
   const currentPolls = polls.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
@@ -75,7 +72,6 @@ const PollResults = () => {
                   <h5 className="card-title">{pollData.question}</h5>
                   <div style={{ maxWidth: "200px", margin: "0 auto" }}>
                     {" "}
-                    {/* Adjust width for smaller pie chart */}
                     <Pie data={data} />
                   </div>
                   <h6 className="mt-2">Total Votes: {totalVotes}</h6>
@@ -92,22 +88,22 @@ const PollResults = () => {
           );
         })}
       </div>
-        <div className="justify-content-between mt-3 fixed-bottom pb-2 pt-2">
-          <button
-            className="btn btn-primary"
-            onClick={handlePrev}
-            disabled={currentPage === 0}
-          >
-            Previous
-          </button>
-          <button
-            className="btn btn-primary"
-            onClick={handleNext}
-            disabled={(currentPage + 1) * itemsPerPage >= polls.length}
-          >
-            Next
-          </button>
-        </div>
+      <div className="justify-content-between mt-3 fixed-bottom pb-2 pt-2">
+        <button
+          className="btn btn-primary"
+          onClick={handlePrev}
+          disabled={currentPage === 0}
+        >
+          Previous
+        </button>
+        <button
+          className="btn btn-primary"
+          onClick={handleNext}
+          disabled={(currentPage + 1) * itemsPerPage >= polls.length}
+        >
+          Next
+        </button>
+      </div>
     </div>
   );
 };

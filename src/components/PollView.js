@@ -51,12 +51,15 @@ const PollView = ({ poll }) => {
                 <input
                   type="radio"
                   className="form-check-input me-2"
-                  id={`poll-${pollData.id}-option-${index}`} 
+                  id={`poll-${pollData.id}-option-${index}`}
                   name={`poll-${pollData.id}-options`}
                   checked={selectedOption === index}
                   onChange={() => handleVote(index)}
                 />
-                <label htmlFor={`poll-${pollData.id}-option-${index}`} className="form-check-label">
+                <label
+                  htmlFor={`poll-${pollData.id}-option-${index}`}
+                  className="form-check-label"
+                >
                   {option.text} - {option.votes} votes
                 </label>
               </div>
