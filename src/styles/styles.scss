@@ -60,39 +60,34 @@ $transition-duration: 0.3s;
 }
 .poll-container {
   display: flex;
-  flex-direction: column; 
-  justify-content: space-between; 
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
-  max-width: 800px; 
-  margin: 20px auto; 
+  max-width: 800px;
+  margin: 20px auto;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
   background-color: #f9f9f9;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  max-height: calc(100vh - 100px); 
-  overflow-y: auto; 
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
 }
 .poll-option {
   margin-bottom: 10px;
 }
 .poll-options {
-  flex-grow: 1; 
-  overflow-y: auto; 
+  flex-grow: 1;
+  overflow-y: auto;
 }
-
-
-
-
-
 
 //pagination
 
 .pagination-container {
   display: flex;
   justify-content: center;
-  margin: 10px 0; 
-  padding: 5px; 
+  margin: 10px 0;
+  padding: 5px;
 }
 
 .pagination-button {
@@ -100,8 +95,8 @@ $transition-duration: 0.3s;
   color: white;
   border: none;
   border-radius: 5px;
-  padding: 5px 10px; 
-  margin: 0 3px;    
+  padding: 5px 10px;
+  margin: 0 3px;
   cursor: pointer;
   transition: background-color 0.3s;
 
@@ -110,8 +105,8 @@ $transition-duration: 0.3s;
   }
 
   &:disabled {
-    background-color: #ccc; 
-    cursor: not-allowed;   
+    background-color: #ccc;
+    cursor: not-allowed;
   }
 }
 

@@ -1,2 +1,0 @@
-# poll-widget
-polling website

@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
+import React, { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 const AddPoll = () => {
-  const [question, setQuestion] = useState('');
-  const [options, setOptions] = useState(['', '']);
+  const [question, setQuestion] = useState("");
+  const [options, setOptions] = useState(["", ""]);
 
   const handleAddOption = () => {
-    setOptions([...options, '']);
+    setOptions([...options, ""]);
   };
 
   const handleOptionChange = (index, value) => {
@@ -19,14 +19,13 @@ const AddPoll = () => {
     const newPoll = {
       id: uuidv4(),
       question,
-      options: options.map((text) => ({ text, votes: 0 }))
+      options: options.map((text) => ({ text, votes: 0 })),
     };
-    const existingPolls = JSON.parse(localStorage.getItem('polls')) || [];
-    localStorage.setItem('polls', JSON.stringify([...existingPolls, newPoll]));
-    setQuestion('');
-    setOptions(['', '']);
+    const existingPolls = JSON.parse(localStorage.getItem("polls")) || [];
+    localStorage.setItem("polls", JSON.stringify([...existingPolls, newPoll]));
+    setQuestion("");
+    setOptions(["", ""]);
   };
-
 
   return (
     <div className="container card  shadow-lg mt-5 w-75 h-100 mh-100 mw-100">
@@ -60,28 +59,6 @@ const AddPoll = () => {
       </button>
     </div>
   );
-  // return (
-  //   <div className="container mt-5">
-  //     <h2 className="mb-4">Add Poll</h2>
-  //       <input
-  //         type="text"
-  //         placeholder="Question"
-  //         value={question}
-  //         onChange={(e) => setQuestion(e.target.value)}
-  //       />
-  //     {options.map((option, index) => (
-  //       <input
-  //         key={index}
-  //         type="text"
-  //         placeholder={`Option ${index + 1}`}
-  //         value={option}
-  //         onChange={(e) => handleOptionChange(index, e.target.value)}
-  //       />
-  //     ))}
-  //     <button onClick={handleAddOption}>Add Option</button>
-  //     <button onClick={handleSubmit}>Create Poll</button>
-  //   </div>
-  // );
 };
 
 export default AddPoll;
