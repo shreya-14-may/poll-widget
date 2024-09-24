@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Page 2</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Include your CSS here -->
+</head>
+<body>
+    <div id="poll-container"></div>
+
+    <script src="https://unpkg.com/react/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="path/to/your/PollView.js"></script> <!-- Adjust the path accordingly -->
+
+    <script>
+        const poll = {
+            id: '2',
+            question: 'How do you like the Opinary test?',
+            options: [
+                { text: 'It was great and so challenging.', votes: 0 },
+                { text: 'Not bad, but you can improve.', votes: 0 },
+                { text: 'It was a nightmare, never again.', votes: 0 },
+            ],
+        };
+
+        const pollContainer = document.getElementById('poll-container');
+        ReactDOM.render(<PollView poll={poll} />, pollContainer);
+    </script>
+</body>
+</html>
