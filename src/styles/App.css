@@ -10,28 +10,35 @@
   align-items: center;
   color: #333;
 } */
-html, body {
+/* html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent body scrolling */
-  height: 100%;
-}
+  overflow: hidden; 
+  height: 100vh;
+} */
 
-.App {
+/* .App {
   text-align: center;
   background-image: url('/Users/deboshreedas/Sites3.0/poll-widget/src/assets/image.png'); 
   background-size: cover; 
   background-position: center; 
   min-height: 100vh; 
-  /* height: calc(100vh - 70px);  */
+  height: calc(100vh - 70px); 
   display: flex;
   flex-direction: column;
   justify-content: flex-start; 
   align-items: center;
   color: #333;
   overflow: hidden; 
-}
+} */
 
+
+.App{
+  /* background-image: url('/Users/deboshreedas/Sites3.0/poll-widget/src/assets/image.png'); */
+  background-size: cover; 
+  background-position: 'center'; 
+  min-height: 100vh;
+}
 /* .App {
   text-align: center;
   background-image: url('/Users/deboshreedas/Sites3.0/poll-widget/src/assets/image.png'); 
@@ -46,7 +53,7 @@ html, body {
   margin-top: 70px; 
   overflow: hidden;
 } */
-.App-header {
+/* .App-header {
   background-color: #007bff;
   min-height: 100vh;
   display: flex;
@@ -61,4 +68,4 @@ html, body {
   .App-header {
     font-size: calc(8px + 2vmin); 
   }
-}
+} */

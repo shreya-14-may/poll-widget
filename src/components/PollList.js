@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import PollView from './PollView';
 import pollsData from '../polls.json';
-// import '../styles/Poll.css'; 
 
 const PollList = () => {
   const [polls, setPolls] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const pollsPerPage = 3;
-
-  // useEffect(() => {
-  //   const storedPolls = JSON.parse(localStorage.getItem('polls')) || [];
-  //   setPolls(storedPolls);
-  // }, []); without polls from  json file
   useEffect(() => {
     const storedPolls = JSON.parse(localStorage.getItem('polls'));
     if (!storedPolls || storedPolls.length === 0) {
-      // If no polls in localStorage, load from JSON
       localStorage.setItem('polls', JSON.stringify(pollsData));
       setPolls(pollsData);
     } else {
@@ -38,14 +31,27 @@ const PollList = () => {
   };
 
   return (
-    <div>
-      <h2>Poll List</h2>
+    <div className = "container-sm container-md container-lg container-xl bottom-fixed">
+      <div className="d-flex flex-column align-items-center">
       {currentPolls.map((poll) => (
         <PollView key={poll.id} poll={poll} />
       ))}
-      <div className="pagination">
-        <button onClick={handlePrevPage} disabled={currentPage === 1}>Previous</button>
-        <button onClick={handleNextPage} disabled={indexOfLastPoll >= polls.length}>Next</button>
+      </div>
+      <div className="justify-content-between mt-3 pb-2 pt-2">
+        <button
+          className="pagination-button"
+          onClick={handlePrevPage}
+          disabled={currentPage === 1}
+        >
+          Previous
+        </button>
+        <button
+          className="pagination-button"
+          onClick={handleNextPage}
+          disabled={indexOfLastPoll >= polls.length}
+        >
+          Next
+        </button>
       </div>
     </div>
   );

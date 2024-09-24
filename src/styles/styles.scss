@@ -36,24 +36,10 @@ $transition-duration: 0.3s;
   margin-bottom: 15px;
 }
 
-// Progress Bar Styles
-.progress-bar {
-  width: 100%;
-  background-color: $border-color;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 5px;
-
-  .progress {
-    height: 20px;
-    background-color: $progress-color;
-    transition: width $transition-duration ease-in-out;
-    border-radius: 5px;
-  }
-}
+// Progress Bar Styles replaced with bootstrap classes
 
 // PollView Styles
-.poll-container {
+.poll-container-xxx {
   width: 100%;
   min-width: 600px;
   max-width: 600px;
@@ -72,21 +58,60 @@ $transition-duration: 0.3s;
     transform: scale(1.05);
   }
 }
-
+.poll-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  width: 100%;
+  max-width: 800px; 
+  margin: 20px auto; 
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: calc(100vh - 100px); 
+  overflow-y: auto; 
+}
 .poll-option {
   margin-bottom: 10px;
 }
+.poll-options {
+  flex-grow: 1; 
+  overflow-y: auto; 
+}
 
-.progress-bar-container {
-  width: 100%;
-  background-color: #f3f3f3;
+
+
+
+
+
+//pagination
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0; 
+  padding: 5px; 
+}
+
+.pagination-button {
+  background-color: $primary-color;
+  color: white;
+  border: none;
   border-radius: 5px;
-  overflow: hidden;
+  padding: 5px 10px; 
+  margin: 0 3px;    
+  cursor: pointer;
+  transition: background-color 0.3s;
 
-  .progress-bar {
-    height: 10px;
-    background-color: #4caf50;
-    border-radius: 5px;
+  &:hover {
+    background-color: adjust-color($primary-color, $lightness: -10%);
+  }
+
+  &:disabled {
+    background-color: #ccc; 
+    cursor: not-allowed;   
   }
 }
 

@@ -7,10 +7,10 @@ import AppRoutes from './AppRoutes'; // Import your routes
 
 const App = () => {
   return (
-    <div className="App">
+    <div className=" App d-flex flex-column justify-content-start align-items-center text-center" style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/image.png)` }}>
       <Router>
         <Nav />
-        <AppRoutes /> {/* Use the routes component here */}
+        <AppRoutes /> 
       </Router>
     </div>
   );
